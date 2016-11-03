@@ -387,14 +387,14 @@ RAML;
         $schemaParser->expects($this->any())->method('getCompatibleContentTypes')->willReturn([ 'application/json' ]);
         
         $schemaParser->expects($this->any())->method('setSourceUri')->withConsecutive(
-            [ 'file:'.__DIR__.'/fixture/songs.json' ]
+            [ 'file:'.__DIR__. DIRECTORY_SEPARATOR . 'fixture' . DIRECTORY_SEPARATOR . 'songs.json' ]
         );
         
         $parser = new \Raml\Parser([
             $schemaParser
         ]);
         
-        $parser->parse(__DIR__.'/fixture/includeSchema.raml');
+        $parser->parse(__DIR__ . DIRECTORY_SEPARATOR . 'fixture' . DIRECTORY_SEPARATOR .  'includeSchema.raml');
     }
     
     /** @test */
