@@ -507,7 +507,7 @@ class Parser
         $fullPath = realpath($rootDir . '/' . $fileName);
 
         if (is_readable($fullPath) === false) {
-            return false;
+	        throw new FileNotFoundException($fileName);
         }
 
         // Prevent LFI directory traversal attacks
